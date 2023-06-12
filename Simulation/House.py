@@ -7,5 +7,6 @@ class House:
 
     def get_prediction(self, hour):
         return self.consumption_data.iloc[hour]['Pred']
-    
-    
+
+    def set_prediction(self, new_pred):
+        self.consumption_data['Pred'] = new_pred
