@@ -6,8 +6,8 @@ import Battery
 
 current_dir = os.getcwd()
 parent_dir = os.path.dirname(current_dir)
-price_data_file = os.path.join(current_dir, 'data', 'price_data.csv')
-hourly_consumption_file = os.path.join(current_dir, 'data', 'house1_cons_pred.csv')
+# price_data_file = os.path.join(current_dir, 'data/Neighborhood With prices', 'price_data.csv')
+hourly_consumption_file = os.path.join(current_dir, 'data/Neighborhood With prices', 'house1_cons_pred_price.csv')
 
 class System:
     def __init__(self, price_data_path, consumption_data_path, battery):
