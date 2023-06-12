@@ -4,3 +4,6 @@ class House:
 
     def get_consumption(self, hour):
         return self.consumption_data.iloc[hour]['Consumption']
+    
+    def get_prediction(self, hour):
+        return self.consumption_data.iloc[hour]['Pred']

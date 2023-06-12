@@ -12,7 +12,7 @@ class System:
     def average_consume(self):
         total_average_consume = 0
         for hour in range(24):
-            total_average_consume += self.house.get_consumption(hour)
+            total_average_consume += self.house.get_prediction(hour)
 
         total_average_consume = total_average_consume/24
         return total_average_consume
@@ -24,7 +24,7 @@ class System:
         total_average_consume = self.average_consume()
 
         for hour in range(24):
-            consumption = self.house.get_consumption(hour)
+            consumption = self.house.get_prediction(hour)
 
             # Without battery
             consumption_without_battery = consumption
@@ -55,7 +55,7 @@ class System:
 
 
 battery = Battery.Battery(max_capacity=10000, max_charge_rate=2, max_discharge_rate=2)
-system = System('data/price_data.csv', 'data/average_hourly_consumption.csv', battery)
+system = System('data/price_data.csv', 'data/day_pred_cons.csv', battery)
 consume_with_battery, consume_without_battery = system.simulate()
 
 plt.plot(range(24), consume_without_battery, label='Without Battery')
